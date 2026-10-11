@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+</head>
+<body>
+    <div align="center">
+        <form action="{% url 'update' emp.id %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <h1>This is the Employee Update Page</h1>
+                <label for=""><img src="/media/{{i.image}}" alt="{{i.name}}" height="100px" width="200px"></label><br>
+                <label for="name">image</label>
+                <input type="file" id="name" name="image"  required><br>
+
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="{{ emp.name }}" required><br>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="{{ emp.email }}" required><br>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" value="{{ emp.dob|date:'Y-m-d' }}" required><br>
+
+                <label for="designation">Designation</label>
+                <input type="text" id="designation" name="designation" value="{{ emp.designation }}" required><br>
+
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

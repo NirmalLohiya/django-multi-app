@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>welcome to enter this page</h1>
+        <a href="{% url 'createEmp' %}"><button>add Employee</button></a>
+        <form action="{% url 'showdata' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button name="btnshow">show Employee</button>
+        </form>
+    </div>
+    <table align="center">
+        <tr>
+            <th>image</th>
+            <th>name</th>
+            <th>email</th>
+            <th>dob</th>
+            <th>designation</th>
+        </tr>
+        {% for i in emp %}
+        <tr>
+            <td><img src="/media/{{i.image}}" alt="{{i.name}}" height="100px" width="200px"></td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.designation}}</td>
+            <td><a href="{% url 'update' i.id %}"><button>update</button></a></td>
+            <form action="{% url 'delete' i.id %}" method="POST">
+                {% csrf_token %}
+            <td><button name="btndelete">Delete</button></td>
+        </form>
+        </tr>
+        {% endfor%}
+    </table>
+</body>
+
+</html>

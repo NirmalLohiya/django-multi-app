@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>this is password chanmge the pagfe to chang the passwor </h1>
+        {% if message %}
+            {% for message in message %}
+                <p style="color: red;">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <div><label for="">old password</label>
+                <label for=""><input type="text" placeholder="enter the old pass" name="pass"></label>
+            </div>
+            <div><label for="">new password</label>
+                <label for=""><input type="text" placeholder="enter the new pass" name="newpass"></label>
+            </div>
+            <div><label for="">conf password</label>
+                <label for=""><input type="text" placeholder="enter the conf pass" name="conf"></label>
+            </div>
+            <button>change password</button>
+        </form>
+    </div>
+</body>
+</html>

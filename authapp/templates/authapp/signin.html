@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>this is the authentication register pages!!!!!</h1>
+        {% if messages %}
+            {% for message in messages %}
+            <p style="color: red">
+                {{ message }}
+            </p>
+            {% endfor %}
+
+        {% endif %}
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="">username</label>
+            <label for=""><input type="text" placeholder="enter username" name="username" id="" required></label><br>
+            <label for="">email</label>
+            <label for=""><input type="text" placeholder="user email" name="email" id="" required></label><br>
+            <label for="">password</label>
+            <label for=""><input type="password" placeholder="password" name="passw" id="" required></label><br>
+            <label for="">password</label>
+            <label for=""><input type="password" placeholder="password" name="confpassw" id="" required></label><br>
+            <input type="submit" name="" id="" value="signin">
+        </form>
+        <a href="{% url 'ahome' %}"><input type="submit" value="back"></a>
+    </div>
+</body>
+
+</html>

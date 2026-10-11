@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Profile</title>
+</head>
+
+<body align="center"></body>>
+    <h2>Welcome, {{ user.first_name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+
+    <a href="{% url 'password_change' %}">Change Password</a><br>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    <!-- <a href="{% url 'logout' %}">Logout</a> -->
+</body>
+
+</html>

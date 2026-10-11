@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div align="center">
+        <h1>This is employee add Page</h1>
+        <p>please filled employee detail</p>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="">picture</label>
+            <label for=""><input type="file" accept=".jpg,.jpeg,.png" name="image" required></label><br>
+            <label for="">name</label>
+            <label for=""><input type="text" placeholder="employee name" name="name" required></label><br>
+            <label for="">email</label>
+            <label for=""><input type="text" placeholder="employee email" name="email" required></label><br>
+            <label for="">DOB</label>
+            <label for=""><input type="date" placeholder="employee date of birth" name="dob" required></label><br>
+            <label for="">designation</label>
+            <label for=""><input type="text" placeholder="employee designation" name="designation" required></label><br>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>
